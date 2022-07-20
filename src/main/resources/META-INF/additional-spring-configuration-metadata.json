@@ -1,0 +1,16 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource.dynamic",
+      "type": "com.el.dynamic.config.DynamicDatabaseConfiguration",
+      "description": "自动装配database数据源.",
+      "sourceType": "com.el.dynamic.config.DynamicDatabaseConfiguration"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.datasource.dynamic.databaseConnectionConfig",
+      "sourceType": "com.el.dynamic.config.DynamicDatabaseConfiguration"
+    }
+  ]
+}

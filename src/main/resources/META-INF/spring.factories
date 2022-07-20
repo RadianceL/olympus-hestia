@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.el.dynamic.config.ApplicationDataSourceConfiguration,\
+  com.el.dynamic.config.DynamicDatabaseConfiguration
