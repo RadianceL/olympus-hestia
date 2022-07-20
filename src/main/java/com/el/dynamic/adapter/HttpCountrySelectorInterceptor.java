@@ -6,8 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -27,21 +25,5 @@ public class HttpCountrySelectorInterceptor implements HandlerInterceptor {
             DatasourceSelectorHolder.setCurrentDatabase(countryCode);
         }
         return true;
-    }
-
-    /**
-     * 处理后调用（正常）
-     */
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
-
-    }
-
-    /**
-     * 处理后调用(任何情况)
-     */
-    @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
-        DatasourceSelectorHolder.clear();
     }
 }
