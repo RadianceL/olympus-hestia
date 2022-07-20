@@ -68,7 +68,7 @@ public class DatabaseSelector extends AbstractRoutingDataSource {
 
     @Override
     protected Object determineCurrentLookupKey() {
-        return DatasourceSelectorHolder.getCurrentCountry();
+        return DatasourceSelectorHolder.getCurrentDatabase();
     }
 
     @Override

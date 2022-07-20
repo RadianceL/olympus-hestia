@@ -17,14 +17,14 @@ public class DatasourceSelectorHolder {
 
     private static final InheritableThreadLocal<String> DATASOURCE_HOLDER = new InheritableThreadLocal<>();
 
-    public static String getCurrentCountry() {
+    public static String getCurrentDatabase() {
         if (StringUtils.isNotBlank(DATASOURCE_HOLDER.get())){
             return DATASOURCE_HOLDER.get();
         }
         return DEFAULT_COUNTRY;
     }
 
-    public static void setCurrentCountry(String currentCountry) {
+    public static void setCurrentDatabase(String currentCountry) {
         DATASOURCE_HOLDER.set(currentCountry);
     }
 

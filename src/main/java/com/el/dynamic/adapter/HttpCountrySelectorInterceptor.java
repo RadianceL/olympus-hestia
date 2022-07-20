@@ -24,7 +24,7 @@ public class HttpCountrySelectorInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         String countryCode = request.getHeader(RequestBasicHeader.CONSTITUTIONAL_CODE);
         if (StringUtils.isNotBlank(countryCode)) {
-            DatasourceSelectorHolder.setCurrentCountry(countryCode);
+            DatasourceSelectorHolder.setCurrentDatabase(countryCode);
         }
         return true;
     }
