@@ -1,8 +1,8 @@
-package com.el.dynamic.core;
+package com.olympus.dynamic.core;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import com.el.dynamic.config.DynamicDatabaseConfiguration;
+import com.olympus.dynamic.config.DynamicDatabaseConfiguration;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.CollectionUtils;
 

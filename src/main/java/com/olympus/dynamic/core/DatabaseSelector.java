@@ -1,6 +1,6 @@
-package com.el.dynamic.core;
+package com.olympus.dynamic.core;
 
-import com.el.dynamic.datasource.ConnectWarp;
+import com.olympus.dynamic.datasource.ConnectWarp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 

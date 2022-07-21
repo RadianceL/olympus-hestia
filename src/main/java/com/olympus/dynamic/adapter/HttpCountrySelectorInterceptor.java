@@ -1,6 +1,6 @@
-package com.el.dynamic.adapter;
+package com.olympus.dynamic.adapter;
 
-import com.el.dynamic.core.DatasourceSelectorHolder;
+import com.olympus.dynamic.core.DatasourceSelectorHolder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

@@ -1,4 +1,4 @@
-package com.el.dynamic.adapter;
+package com.olympus.dynamic.adapter;
 
 /**
  * 请求头标准编码

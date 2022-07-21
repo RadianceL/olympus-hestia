@@ -1,4 +1,4 @@
-package com.el.dynamic.config;
+package com.olympus.dynamic.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

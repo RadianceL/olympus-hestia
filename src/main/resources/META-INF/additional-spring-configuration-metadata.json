@@ -2,15 +2,15 @@
   "groups": [
     {
       "name": "spring.datasource.dynamic",
-      "type": "com.el.dynamic.config.DynamicDatabaseConfiguration",
+      "type": "com.olympus.dynamic.config.DynamicDatabaseConfiguration",
       "description": "自动装配database数据源.",
-      "sourceType": "com.el.dynamic.config.DynamicDatabaseConfiguration"
+      "sourceType": "com.olympus.dynamic.config.DynamicDatabaseConfiguration"
     }
   ],
   "properties": [
     {
       "name": "spring.datasource.dynamic.databaseConnectionConfig",
-      "sourceType": "com.el.dynamic.config.DynamicDatabaseConfiguration"
+      "sourceType": "com.olympus.dynamic.config.DynamicDatabaseConfiguration"
     }
   ]
 }

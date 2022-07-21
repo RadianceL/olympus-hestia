@@ -1,4 +1,4 @@
-package com.el.dynamic.core;
+package com.olympus.dynamic.core;
 
 import org.apache.commons.lang3.StringUtils;
 
