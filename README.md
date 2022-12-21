@@ -12,7 +12,7 @@ change `@SpringBootApplication` to `@SpringBootApplication(exclude = DataSourceA
 
 note: this for disable spring database auto configuration check default database config, dynamic-datasource-connector use user-defined `spring.database.dynamic.databaseConnectionConfig`
 #### STEP 2
-config `spring.database.dynamic.databaseConnectionConfig` like the example below
+config `spring.datasource.dynamic.databaseConnectionConfig` like the example below
 ```yml
 spring:
   profiles:
