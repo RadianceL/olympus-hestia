@@ -61,15 +61,15 @@ public class DatasourceRegister {
         // 设置连接名称
         hikariConfig.setPoolName(poolName);
 
-        String minimumIdle = dataSourceConfigMap.get("minimumIdle");
-        if (StringUtils.isBlank(minimumIdle)) {
-            minimumIdle = "5";
-        }
-        hikariConfig.setMinimumIdle(Integer.parseInt(minimumIdle));
+//        String minimumIdle = dataSourceConfigMap.get("minimumIdle");
+//        if (StringUtils.isBlank(minimumIdle)) {
+//            minimumIdle = "5";
+//        }
+//        hikariConfig.setMinimumIdle(Integer.parseInt(minimumIdle));
 
         String maximumPoolSize = dataSourceConfigMap.get("maximumPoolSize");
         if (StringUtils.isBlank(maximumPoolSize)) {
-            maximumPoolSize = "20";
+            maximumPoolSize = "10";
         }
         hikariConfig.setMaximumPoolSize(Integer.parseInt(maximumPoolSize));
 

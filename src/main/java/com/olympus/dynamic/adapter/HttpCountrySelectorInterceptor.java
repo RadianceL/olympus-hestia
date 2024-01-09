@@ -1,13 +1,14 @@
 package com.olympus.dynamic.adapter;
 
 import com.olympus.dynamic.core.DatasourceSelectorHolder;
+import jakarta.annotation.Nonnull;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * 拦截器
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class HttpCountrySelectorInterceptor implements HandlerInterceptor {
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+    public boolean preHandle(HttpServletRequest request, @Nonnull HttpServletResponse response,@Nonnull Object handler) {
         String countryCode = request.getHeader(RequestBasicHeader.CONSTITUTIONAL_CODE);
         if (StringUtils.isNotBlank(countryCode)) {
             DatasourceSelectorHolder.setCurrentDatabase(countryCode);
