@@ -8,6 +8,7 @@ import org.springframework.util.CollectionUtils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * 数据源注册器
@@ -31,9 +32,14 @@ public class DatasourceRegister {
             return new HashMap<>();
         }
         Map<Object, Object> dataSourceMap = new HashMap<>(8);
+        AtomicReference<Boolean> isFirst = new AtomicReference<>(true);
         databaseConnectionConfig.forEach((poolName, dataSourceConfigMap) -> {
             HikariDataSource dataSource = new HikariDataSource(getHikariConfig(poolName, dataSourceConfigMap));
             dataSourceMap.put(poolName, dataSource);
+            if (isFirst.get()) {
+                dataSourceMap.put(DatasourceSelectorHolder.DEFAULT_DATABASE, dataSource);
+                isFirst.set(false);
+            }
         });
         return dataSourceMap;
     }

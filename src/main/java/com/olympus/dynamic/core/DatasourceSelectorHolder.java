@@ -9,11 +9,10 @@ import org.apache.commons.lang3.StringUtils;
  * @author eddie
  */
 public class DatasourceSelectorHolder {
-
     /**
      * 默认宪法
      */
-    public static final String DEFAULT_COUNTRY = "CHN";
+    public static final String DEFAULT_DATABASE = "Default";
 
     private static final InheritableThreadLocal<String> DATASOURCE_HOLDER = new InheritableThreadLocal<>();
 
@@ -21,7 +20,7 @@ public class DatasourceSelectorHolder {
         if (StringUtils.isNotBlank(DATASOURCE_HOLDER.get())){
             return DATASOURCE_HOLDER.get();
         }
-        return DEFAULT_COUNTRY;
+        return DEFAULT_DATABASE;
     }
 
     public static void setCurrentDatabase(String currentCountry) {
