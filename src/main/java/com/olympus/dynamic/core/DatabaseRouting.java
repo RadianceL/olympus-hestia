@@ -1,6 +1,7 @@
 package com.olympus.dynamic.core;
 
 import jakarta.annotation.Nonnull;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 import javax.sql.DataSource;
@@ -18,11 +19,8 @@ public class DatabaseRouting extends AbstractRoutingDataSource {
 
     private final AtomicBoolean initializationFlag = new AtomicBoolean(false);
 
-    private final DatasourceRegister dataSourceRegister;
-
-    public DatabaseRouting(DatasourceRegister dataSourceRegister) {
-        this.dataSourceRegister = dataSourceRegister;
-    }
+    @Autowired
+    private DatasourceRegister dataSourceRegister;
 
     /**
      * mybatis在使用mapper接口执行sql的时候会从该方法获取connection执行sql
