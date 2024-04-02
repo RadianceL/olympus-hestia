@@ -1,5 +1,6 @@
 package com.olympus.dynamic.adapter;
 
+import com.olympus.dynamic.config.DynamicDatabaseConfiguration;
 import com.olympus.dynamic.core.DatasourceSelectorHolder;
 import jakarta.annotation.Nonnull;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,12 +17,17 @@ import org.springframework.web.servlet.HandlerInterceptor;
  * @since 2022/7/20
  */
 @Slf4j
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class HttpCountrySelectorInterceptor implements HandlerInterceptor {
+public class DatabaseSelectorInterceptor implements HandlerInterceptor {
+
+    private final DynamicDatabaseConfiguration dynamicDatabaseConfiguration;
+
+    public DatabaseSelectorInterceptor(DynamicDatabaseConfiguration dynamicDatabaseConfiguration) {
+        this.dynamicDatabaseConfiguration = dynamicDatabaseConfiguration;
+    }
 
     @Override
     public boolean preHandle(HttpServletRequest request, @Nonnull HttpServletResponse response,@Nonnull Object handler) {
-        String countryCode = request.getHeader(RequestBasicHeader.CONSTITUTIONAL_CODE);
+        String countryCode = request.getHeader(dynamicDatabaseConfiguration.getDynamicDatabaseHeaderKey());
         if (StringUtils.isNotBlank(countryCode)) {
             DatasourceSelectorHolder.setCurrentDatabase(countryCode);
         }

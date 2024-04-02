@@ -17,10 +17,6 @@ import java.util.Map;
 @ConfigurationProperties("spring.datasource.dynamic")
 public class DynamicDatabaseConfiguration {
     /**
-     * 默认动态数据源
-     */
-    private String defaultDynamicDatabase;
-    /**
      * 动态数据库headerKey
      */
     private String dynamicDatabaseHeaderKey;

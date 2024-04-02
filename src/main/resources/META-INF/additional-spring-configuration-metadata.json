@@ -13,10 +13,6 @@
       "sourceType": "com.olympus.dynamic.config.DynamicDatabaseConfiguration"
     },
     {
-      "name": "spring.datasource.dynamic.databaseConnectionConfig.defaultDynamicDatabase",
-      "sourceType": "com.olympus.dynamic.config.DynamicDatabaseConfiguration"
-    },
-    {
       "name": "spring.datasource.dynamic.databaseConnectionConfig.dynamicDatabaseHeaderKey",
       "sourceType": "com.olympus.dynamic.config.DynamicDatabaseConfiguration"
     }
