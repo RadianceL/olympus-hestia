@@ -1,5 +1,6 @@
 package com.olympus.dynamic.config;
 
+import com.olympus.dynamic.annotations.DataSelectorPointProcessor;
 import com.olympus.dynamic.core.DatabaseRouting;
 import com.olympus.dynamic.core.DatasourceRegister;
 import com.zaxxer.hikari.HikariConfig;
@@ -29,6 +30,11 @@ public class ApplicationDataSourceConfiguration {
     @ConditionalOnClass(HikariConfig.class)
     public DatasourceRegister datasourceRegister(DynamicDatabaseConfiguration dynamicDatabaseConfiguration) {
         return new DatasourceRegister(dynamicDatabaseConfiguration);
+    }
+
+    @Bean("dataSelectorPointProcessor")
+    public DataSelectorPointProcessor datasourceRegister() {
+        return new DataSelectorPointProcessor();
     }
 
 }
